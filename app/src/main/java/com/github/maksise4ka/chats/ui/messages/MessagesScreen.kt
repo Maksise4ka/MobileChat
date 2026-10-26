@@ -178,10 +178,12 @@ private fun MessageItem(
             .padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Text(text = message.from, style = MaterialTheme.typography.labelMedium)
+
         val text = message.data.text
         if (text != null) {
             Text(text = text.text)
         }
+
         val image = message.data.image
         if (image != null) {
             AsyncImage(
@@ -207,8 +209,6 @@ private fun ErrorBlock(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = stringResource(R.string.messages_load_error))
-        Button(onClick = onRetry) {
-            Text(text = stringResource(R.string.retry))
-        }
+        Button(onClick = onRetry) { Text(text = stringResource(R.string.retry)) }
     }
 }
