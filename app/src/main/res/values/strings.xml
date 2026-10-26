@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Chats</string>
+    <string name="chats_load_error">Не удалось загрузить чаты</string>
+    <string name="messages_load_error">Не удалось загрузить сообщения</string>
+    <string name="no_messages">Сообщений нет</string>
+    <string name="retry">Повторить</string>
+    <string name="back_to_chats">К чатам</string>
+    <string name="image">Изображение</string>
 </resources>
