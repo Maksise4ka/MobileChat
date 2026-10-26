@@ -124,6 +124,7 @@ private fun MessagesContent(
                             onImageClick = onImageClick,
                         )
                     }
+
                     if (uiState.isLoading) {
                         item {
                             Box(
@@ -134,6 +135,7 @@ private fun MessagesContent(
                             }
                         }
                     }
+
                     if (uiState.isError) {
                         item {
                             ErrorBlock(onRetry = onLoadMore, modifier = Modifier.fillMaxWidth())
@@ -170,9 +172,11 @@ private fun MessageItem(
     imageUrls: ImageUrls,
     onImageClick: (String) -> Unit,
 ) {
-    Column(modifier = Modifier
-        .fillMaxWidth()
-        .padding(horizontal = 16.dp, vertical = 8.dp)) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+    ) {
         Text(text = message.from, style = MaterialTheme.typography.labelMedium)
         val text = message.data.text
         if (text != null) {

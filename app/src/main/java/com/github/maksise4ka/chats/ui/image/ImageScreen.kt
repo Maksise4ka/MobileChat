@@ -42,6 +42,7 @@ fun ImageScreen(
                     }
                 },
             )
+
             IconButton(
                 onClick = onClose,
                 modifier = Modifier.align(Alignment.TopEnd),
