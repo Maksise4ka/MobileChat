@@ -6,4 +6,7 @@
     <string name="retry">Повторить</string>
     <string name="back_to_chats">К чатам</string>
     <string name="image">Изображение</string>
+    <string name="image_load_error">Не удалось загрузить картинку</string>
+    <string name="close">Закрыть</string>
+    <string name="select_chat">Выберите чат</string>
 </resources>

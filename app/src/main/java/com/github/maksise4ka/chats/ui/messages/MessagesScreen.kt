@@ -90,7 +90,11 @@ private fun MessagesContent(
         }
 
         val listState = rememberLazyListState()
-        LoadMoreEffect(listState = listState, itemsCount = uiState.messages.size, onLoadMore = onLoadMore)
+        LoadMoreEffect(
+            listState = listState,
+            itemsCount = uiState.messages.size,
+            onLoadMore = onLoadMore
+        )
 
         Box(modifier = Modifier.weight(1f)) {
             when {
@@ -122,7 +126,10 @@ private fun MessagesContent(
                     }
                     if (uiState.isLoading) {
                         item {
-                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                            Box(
+                                modifier = Modifier.fillMaxWidth(),
+                                contentAlignment = Alignment.Center
+                            ) {
                                 CircularProgressIndicator()
                             }
                         }
@@ -147,7 +154,8 @@ private fun LoadMoreEffect(
     val shouldLoadMore by remember(listState) {
         derivedStateOf {
             val layoutInfo = listState.layoutInfo
-            val lastVisible = layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: return@derivedStateOf false
+            val lastVisible =
+                layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: return@derivedStateOf false
             lastVisible >= layoutInfo.totalItemsCount - LOAD_MORE_THRESHOLD
         }
     }
@@ -162,7 +170,9 @@ private fun MessageItem(
     imageUrls: ImageUrls,
     onImageClick: (String) -> Unit,
 ) {
-    Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp)) {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .padding(horizontal = 16.dp, vertical = 8.dp)) {
         Text(text = message.from, style = MaterialTheme.typography.labelMedium)
         val text = message.data.text
         if (text != null) {

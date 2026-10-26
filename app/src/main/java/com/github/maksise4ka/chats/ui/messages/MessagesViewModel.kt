@@ -33,6 +33,7 @@ class MessagesViewModel(
         viewModelScope.launch {
             try {
                 val page = repository.getMessagesBefore(channel, state.messages.lastOrNull()?.id)
+
                 _uiState.update {
                     it.copy(
                         messages = (it.messages + page).distinctBy(Message::id).toImmutableList(),
